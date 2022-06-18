@@ -23,10 +23,7 @@ itemFrequencyPlot(x = market_basket,
                   col = brewer.pal(10,'Spectral'))
 
 
-# 1set of association rules
-
-# 
-
+# set of association rules
 rule1 <- market_basket %>% apriori(parameter = list(supp = 0.005, conf=0.8)) %>% sort(by = 'confidence')
 
 summary(rule1)
@@ -41,4 +38,15 @@ rule1 %>% head(n=5)%>% inspect
 
 plot(rule1, engine='htmlwidget')
 plot(rule1, method='two-key', engine='htmlwidget')
-plot(rule1, method='graph', engine='htmlwidget')
+plot(rule1, method='graph', engine='htmlwidget', control = list(type = "items"))
+plot(rule1[1:20], method = "paracoord", control = list(reorder = TRUE))
+plot(rule1[1:20], method = "matrix", control = list(reorder = TRUE))
+
+
+## Eclat
+
+# actually returns set not the rules - so choosing minlen=2 to get atleast two items set 
+# For simple results
+rules_eclat <- eclat(data= market_basket, parameter = list(support=0.004, minlen=2)) 
+
+inspect(sort(rules_eclat, by = 'support')[1:10])

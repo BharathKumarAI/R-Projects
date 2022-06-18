@@ -47,5 +47,6 @@ $$ lift (I_1 -> I_2) = \frac{confidence (I_1 -> I_2)}{support(I_2)}$$
 3. Take all the rules of these subsets having higher confidence than minimum confidence
 4. Sort the rules by decreasing lift
 
-<img src=""
-
+## Resources:
+1. [Kaggle note book for performing EDA for Apriori algorithm](https://www.kaggle.com/code/xvivancos/market-basket-analysis/report)
+2. [EDA Notebook - Kaggle](https://www.kaggle.com/code/philippsp/exploratory-analysis-instacart)
