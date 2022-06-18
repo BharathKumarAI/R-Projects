@@ -46,3 +46,6 @@ $$ lift (I_1 -> I_2) = \frac{confidence (I_1 -> I_2)}{support(I_2)}$$
 2. Take all the subsets in transactions having higher support than minimum support
 3. Take all the rules of these subsets having higher confidence than minimum confidence
 4. Sort the rules by decreasing lift
+
+<img src=""
+

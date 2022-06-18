@@ -1,0 +1,21 @@
+defaults:
+  model: apriori
+
+data:
+  raw:
+    path: "Market Basket Analysis/data/market_basket.csv""
+    format: "csv"
+    separator: ","
+    skip_rows: 1
+    header: None
+
+logs:
+  path: "Market Basket Analysis/logs/""
+  fileFormat: "market_basket_analysis_""
+
+apriori:
+  min_support: 0.2
+  min_confidence: 0.5
+  min_lift: 3
+  min_length: 2
+  max_length: 2
